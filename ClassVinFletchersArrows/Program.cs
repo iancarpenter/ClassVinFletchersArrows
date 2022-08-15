@@ -56,25 +56,22 @@
 
         public class Arrow
         {
-            private float _length;
-            private ArrowHead _arrowHead;
-            private Fletching _fletching;
+            private float Length { get; set; }
+            private ArrowHead ArrowHead { get; set; }
+            private Fletching Fletching { get; set; }
 
-            public float GetLength() => _length;
-            public ArrowHead GetArrowHead() => _arrowHead;
-
-            public Fletching GetFletching() => _fletching;
+            
             public Arrow(ArrowHead arrowHead, Fletching fletching, float length)
             {
-                _arrowHead = arrowHead;
-                _fletching = fletching;
-                _length = length;
+                ArrowHead = arrowHead;
+                Fletching = fletching;
+                Length = length;
             }
 
             public float GetCost()
             {
                 
-                float arrowHeadCost = _arrowHead switch
+                float arrowHeadCost = ArrowHead switch
                 {
                     ArrowHead.Steel => 10,
                     ArrowHead.Wood => 3,
@@ -82,7 +79,7 @@
                     _ => throw new NotImplementedException()
                 };
 
-                float fletchingCost = _fletching switch
+                float fletchingCost = Fletching switch
                 {
                     Fletching.Plastic => 10,
                     Fletching.Turkey => 5,
@@ -90,7 +87,7 @@
                     _ => throw new NotImplementedException()
                 };
 
-                float shaftCost = _length * 0.05f;
+                float shaftCost = Length * 0.05f;
 
                 return (shaftCost + arrowHeadCost + fletchingCost);
             }            

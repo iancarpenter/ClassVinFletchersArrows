@@ -60,15 +60,7 @@
             private ArrowHead ArrowHead { get; set; }
             private Fletching Fletching { get; set; }
             
-            public ArrowHead GetArrowHead() => _arrowHead;
-
-            public Fletching GetFletching() => _fletching;
-            public ArrowHead GetArrowHead() => _arrowHead;
-
-            public Fletching GetFletching() => _fletching;
-            public ArrowHead GetArrowHead() => _arrowHead;
-
-            public Fletching GetFletching() => _fletching;
+ 
             public Arrow(ArrowHead arrowHead, Fletching fletching, float length)
             {
                 ArrowHead = arrowHead;
